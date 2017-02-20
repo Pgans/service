@@ -1,0 +1,58 @@
+<?
+session_start();
+	
+	$pwd=$_REQUEST['pwd'];
+	$uname=$_REQUEST['uname'];
+
+echo 'user';
+echo $uname;
+echo '<br/>';
+echo $pwd;
+//exit;
+
+if (isset($uname) and isset($pwd))
+include 'config.php';
+	mysql_connect($host,$username,$password) or die ("ติดต่อกับฐานข้อมูลไม่ได้");
+	mysql_select_db($dbname) or die("เลือกฐานข้อมูลไม่ได้"); 
+	mysql_query('set character set tis620');
+
+
+{
+
+$sql="select * from jobcom_login where uname='$uname' and pwd='$pwd'"; #ตรวจสอบว่า ตรงหรือไม
+//$sql = " select * from member where username='$name' and  password='$pass' ";
+					$result = mysql_query($sql);
+					$res=mysql_fetch_array($result);
+					$num=mysql_num_rows($result);		
+
+	//$fn=mysql_query($sql); #ประมวลผลค่านั้นออกมา
+	//$res=mysql_fetch_array($fn); #แล้วนับจำนวนแถวว่ามีค่าที่ตรงกี่ค่า
+	//$num = mysql_num_rows($fn);
+
+	if($num!=0){ #ตรวจสอบว่า $row ตรงกับ 0 หรือไม่ ถ้าไม่ตรงกับ 0 แปลว่ารหัสที่กรอกมีใน DB  
+	
+$valid_user=$uname;
+
+session_register("valid_user");            
+
+
+            
+
+echo"Welcome Admin <br>";
+echo '<a href="admin.php"target="_top">ผู้ดูแล</a> <a href="index.php"target="_top">หน้าหลัก</a>';
+
+}
+
+else{
+
+echo"Invalid Username or Password <br>";
+echo'  <a href="index.php?show=admin">ล็อกอิน</a> ';
+echo $num;
+}
+}
+?>
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=tis-620">
+</head>

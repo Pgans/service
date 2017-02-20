@@ -1,0 +1,37 @@
+*					{ margin: 0; padding: 0; }
+body				{
+	font-family: Georgia, serif;
+	background: url(images/login-page-bg.jpg) top center no-repeat #c4c4c4;
+	color: #3a3a3a;
+	font-weight: bold;
+}
+
+.clear				{ clear: both; }
+
+form				{
+	width: 410px;
+	margin: 170px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 70px;
+}
+
+legend				{ display: none; }
+
+fieldset			{ border: 0; }
+
+label				{ width: 115px; text-align: right; float: left; margin: 0 10px 0 0; padding: 9px 0 0 0; font-size: 22px; color:#6f96cf; }
+
+input				{ width: 220px; display: block; padding: 4px; margin: 0 0 10px 0; font-size: 20px;
+					  color: #3a3a3a; font-family: Georgia, serif;}
+input[type=checkbox]{ width: 20px; margin: 0; display: inline-block; }
+
+select		{ width: 400px; display: block; padding: 4px; margin: 0 0 10px 0; font-size: 20px;
+					  color: #3a3a3a; font-family: Georgia, serif;}
+input[type=checkbox]{ width: 20px; margin: 0; display: inline-block; }
+					  
+.button				{ background: url(images/button-bg.png) repeat-x top center; border: 1px solid #999;
+					  -moz-border-radius: 5px; padding: 0px; color: black; font-weight: bold;
+					  -webkit-border-radius: 5px; font-size: 18px;  width: 70px; }
+.button:hover		{ background: white; color: black; }
